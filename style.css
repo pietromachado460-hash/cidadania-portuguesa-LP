@@ -1,0 +1,699 @@
+/* ===== RESET ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+    color:#222;
+    line-height:1.6;
+}
+
+/* ===== CORES ===== */
+
+:root{
+    --primary:#B52D34;
+    --primary-dark:#8B1E24;
+    --gold:#D4AF37;
+    --white:#ffffff;
+    --gray:#f5f5f5;
+    --dark:#1a1a1a;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    min-height:100vh;
+    background:url("hero-bg.jpg") center center/cover no-repeat;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+}
+
+.lisboa{
+    position:relative;
+    padding:120px 20px;
+    background:url("lisboa.jpg") center center/cover no-repeat;
+    text-align:center;
+    color:white;
+}
+
+.lisboa .overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+}
+
+.lisboa-content{
+    position:relative;
+    z-index:2;
+    max-width:800px;
+    margin:auto;
+}
+
+.lisboa-content h2{
+    color:white;
+    margin-bottom:20px;
+}
+
+.lisboa-content p{
+    margin-bottom:30px;
+    font-size:1.1rem;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+}
+
+nav{
+    position:relative;
+    z-index:2;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+}
+
+nav img{
+    max-width:260px;
+}
+
+.btn-nav{
+    text-decoration:none;
+    color:white;
+    background:var(--primary);
+    padding:12px 25px;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.btn-nav:hover{
+    background:var(--primary-dark);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    color:white;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2.3rem,5vw,4.5rem);
+    max-width:900px;
+}
+
+.hero p{
+    color:white;
+    max-width:700px;
+    margin-top:20px;
+    font-size:1.1rem;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn-primary{
+    text-decoration:none;
+    background:var(--gold);
+    color:black;
+    font-weight:600;
+    padding:15px 30px;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-whatsapp{
+    text-decoration:none;
+    background:#25D366;
+    color:white;
+    padding:15px 30px;
+    border-radius:50px;
+    font-weight:600;
+}
+
+/* ===== SEÇÕES ===== */
+
+section{
+    padding:90px 8%;
+}
+
+section h2{
+    text-align:center;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2rem,4vw,3rem);
+    color:var(--primary);
+    margin-bottom:50px;
+}
+
+/* ===== BENEFÍCIOS ===== */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.card i{
+    font-size:2.5rem;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+/* ===== DIREITOS ===== */
+
+.rights{
+    background:var(--gray);
+}
+
+.rights-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.right-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    font-weight:600;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+/* ===== WHATSAPP CHAT ===== */
+
+.chat-container{
+    max-width:900px;
+    margin:auto;
+}
+
+.message{
+    padding:15px 20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    max-width:75%;
+}
+
+.user{
+    background:#e9ecef;
+}
+
+.lawyer{
+    background:#DCF8C6;
+    margin-left:auto;
+}
+
+/* ===== PASSOS ===== */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.step{
+    background:white;
+    border-left:5px solid var(--primary);
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.step span{
+    display:inline-flex;
+    width:40px;
+    height:40px;
+    background:var(--primary);
+    color:white;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    margin-bottom:15px;
+}
+
+/* ===== PDF ===== */
+
+.pdf-section{
+    background:var(--gray);
+}
+
+.pdf-section p{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 30px;
+}
+
+.pdf-section iframe{
+    width:100%;
+    border:none;
+    border-radius:15px;
+    min-height:800px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+/* ===== FAQ ===== */
+
+.faq{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    margin-bottom:20px;
+}
+
+.faq-question{
+    width:100%;
+    border:none;
+    cursor:pointer;
+    background:var(--primary);
+    color:white;
+    text-align:left;
+    padding:18px;
+    border-radius:10px;
+    font-size:1rem;
+}
+
+.faq-answer{
+    background:white;
+    padding:20px;
+    border-radius:0 0 10px 10px;
+    border:1px solid #ddd;
+}
+
+/* ===== CTA FINAL ===== */
+
+.cta{
+    background:linear-gradient(
+    rgba(181,45,52,.95),
+    rgba(139,30,36,.95));
+    color:white;
+    text-align:center;
+}
+
+.cta h2{
+    color:white;
+}
+
+.cta p{
+    margin-bottom:30px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+footer img{
+    width:220px;
+    margin-bottom:20px;
+}
+
+/* ===== WHATSAPP FIXO ===== */
+
+.whatsapp-float{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:65px;
+    height:65px;
+    background:#25D366;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    font-size:2rem;
+    text-decoration:none;
+    z-index:999;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav img{
+        max-width:200px;
+    }
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .btn-primary,
+    .btn-whatsapp{
+        width:100%;
+        text-align:center;
+    }
+
+    section{
+        padding:70px 20px;
+    }
+
+    .message{
+        max-width:95%;
+    }
+
+    .pdf-section iframe{
+        min-height:500px;
+    }
+}
+
+/* ======================
+ANIMAÇÕES
+====================== */
+
+.hidden{
+    opacity:0;
+    transform:translateY(50px);
+    transition:.8s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ======================
+FAQ
+====================== */
+
+.faq-answer{
+    display:none;
+}
+
+/* ======================
+BOTÃO TOPO
+====================== */
+
+.back-to-top{
+
+    position:fixed;
+
+    bottom:100px;
+
+    right:20px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#B52D34;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:999;
+}
+
+.back-to-top.active{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+/* ======================
+ESTATÍSTICAS
+====================== */
+
+.stats{
+
+    background:#f5f5f5;
+
+    padding:80px 20px;
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+    text-align:center;
+}
+
+.counter{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    color:#B52D34;
+}
+
+.dream{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.dream-image{
+    flex:1;
+    text-align:center;
+}
+
+.dream-content{
+    flex:1;
+    min-width:300px;
+}
+
+.dream-image img{
+    width:100%;
+    max-width:400px;
+    border-radius:20px;
+}
+
+.right-card img{
+    width:100%;
+    max-width:250px;
+    height:200px;
+    object-fit:cover;
+    border-radius:15px;
+    display:block;
+    margin:0 auto 15px;
+}
+
+.info-image{
+    width:100%;
+    max-width:900px;
+    display:block;
+    margin:30px auto 0;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.lisboa{
+    position:relative;
+    padding:120px 20px;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            rgba(139,30,36,0.75),
+            rgba(139,30,36,0.75)
+        ),
+        url("https://images.unsplash.com/photo-1513735492246-483525079686"),
+        center center/cover no-repeat;
+}
+
+.lisboa::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:url("https://i.ibb.co/7t7MkHPt/Whats-App-Image-2026-06-22-at-16-28-18.jpg");
+
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:700px;
+
+    opacity:0.12;
+
+    z-index:1;
+}
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+    ),
+    url("https://images.unsplash.com/photo-1513735492246-483525079686")
+    center center/cover no-repeat;
+
+    position:relative;
+    display:flex;
+    flex-direction:column;
+}
+
+.hero-tag{
+  color: gray;
+}
+
+/* ===== RESPONSIVIDADE EXTRA ===== */
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+.rights-grid,
+.stats-grid,
+.steps,
+.cards,
+.beneficios-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+@media (max-width: 768px){
+
+    .hero-content{
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:2rem;
+        line-height:1.2;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .dream{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .dream-content{
+        min-width:auto;
+        text-align:center;
+    }
+
+    .lisboa{
+        padding:80px 20px;
+    }
+
+    .lisboa::before{
+        background-size:300px;
+    }
+
+    footer{
+        padding:40px 15px;
+    }
+}
+
+@media (max-width: 480px){
+
+    .hero h1{
+        font-size:1.7rem;
+    }
+
+    .btn-primary,
+    .btn-whatsapp,
+    .btn-nav{
+        width:100%;
+        display:block;
+        text-align:center;
+    }
+
+    nav img{
+        max-width:160px;
+    }
+
+    .counter{
+        font-size:2.2rem;
+    }
+}
+
+.footer-link{
+    color:#D4AF37;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.footer-link:hover{
+    text-decoration:underline;
+}
