@@ -10,6 +10,14 @@ faqQuestions.forEach((question) => {
 
         const answer = question.nextElementSibling;
 
+        document.querySelectorAll(".faq-answer").forEach((item) => {
+
+            if (item !== answer) {
+                item.style.display = "none";
+            }
+
+        });
+
         if (answer.style.display === "block") {
             answer.style.display = "none";
         } else {
@@ -39,12 +47,14 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 const hiddenElements = document.querySelectorAll(
-    ".card, .right-card, .step, .faq-item"
+    ".card, .right-card, .step, .faq-item, .stat-card"
 );
 
 hiddenElements.forEach((el) => {
+
     el.classList.add("hidden");
     observer.observe(el);
+
 });
 
 // ======================
@@ -82,33 +92,86 @@ topButton.addEventListener("click", () => {
 // ======================
 
 const counters = document.querySelectorAll(".counter");
+const statsSection = document.querySelector(".stats");
 
-counters.forEach(counter => {
+let countersStarted = false;
 
-    counter.innerText = "0";
+function startCounters() {
 
-    const updateCounter = () => {
+    counters.forEach(counter => {
+
+        counter.innerText = "0";
 
         const target = +counter.getAttribute("data-target");
 
-        const current = +counter.innerText;
+        const updateCounter = () => {
 
-        const increment = target / 100;
+            const current = +counter.innerText;
+            const increment = target / 100;
 
-        if (current < target) {
+            if (current < target) {
 
-            counter.innerText = `${Math.ceil(current + increment)}`;
+                counter.innerText = Math.ceil(current + increment);
 
-            setTimeout(updateCounter, 20);
+                setTimeout(updateCounter, 20);
 
-        } else {
+            } else {
 
-            counter.innerText = target;
+                counter.innerText = target;
 
-        }
+            }
 
-    };
+        };
 
-    updateCounter();
+        updateCounter();
+
+    });
+
+}
+
+window.addEventListener("scroll", () => {
+
+    if (
+        !countersStarted &&
+        statsSection &&
+        statsSection.getBoundingClientRect().top < window.innerHeight - 100
+    ) {
+
+        countersStarted = true;
+        startCounters();
+
+    }
+
+});
+
+// ======================
+// ANO AUTOMÁTICO NO RODAPÉ
+// ======================
+
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
+
+// ======================
+// BOTÃO DO TOPO MUDA DE COR
+// ======================
+
+const navButton = document.querySelector(".btn-nav");
+
+window.addEventListener("scroll", () => {
+
+    if (!navButton) return;
+
+    if (window.scrollY > 300) {
+
+        navButton.style.background = "#25D366";
+
+    } else {
+
+        navButton.style.background = "#B52D34";
+
+    }
 
 });
